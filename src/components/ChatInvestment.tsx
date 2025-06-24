@@ -1,10 +1,11 @@
 'use client';
 import React, { useState } from 'react';
-import { Send, TrendingUp, DollarSign, BarChart3, PieChart } from 'lucide-react';
+import { Send, DollarSign, BarChart3, PieChart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem} from '@/components/ui/carousel';
+import Image from 'next/image';
 
 interface ChatMessage {
   id: number;
@@ -22,11 +23,8 @@ interface ChatHistory {
 
 const investmentOptions = [
   { id: 1, title: 'Portfolio Analysis', icon: PieChart, description: 'Analyze your current portfolio' },
-  { id: 2, title: 'Market Trends', icon: TrendingUp, description: 'Get latest market insights' },
-  { id: 3, title: 'Investment Strategy', icon: BarChart3, description: 'Develop investment strategies' },
-  { id: 4, title: 'Risk Assessment', icon: DollarSign, description: 'Evaluate investment risks' },
-  { id: 5, title: 'Sector Analysis', icon: TrendingUp, description: 'Deep dive into sectors' },
-  { id: 6, title: 'Technical Analysis', icon: BarChart3, description: 'Chart patterns and indicators' },
+  { id: 2, title: 'Investment Strategy', icon: BarChart3, description: 'Develop investment strategies' },
+  { id: 3, title: 'Risk Assessment', icon: DollarSign, description: 'Evaluate investment risks' },
 ];
 
 const ChatInvestment = () => {
@@ -86,9 +84,7 @@ const ChatInvestment = () => {
         {/* Logo */}
         <div className="p-6 border-b border-gray-800">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
-              <TrendingUp className="w-6 h-6 text-white" />
-            </div>
+              <Image src={'2.svg'} alt={'fgffg'} width={30} height={30} />
             <h1 className="text-xl font-bold" style={{ color: '#ddf1a5' }}>Fein-AI</h1>
           </div>
         </div>
@@ -174,8 +170,6 @@ const ChatInvestment = () => {
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious className="text-white border-gray-700 bg-gray-800 hover:bg-gray-700 " />
-              <CarouselNext className="text-white border-gray-700 bg-gray-800 hover:bg-gray-700 " />
             </Carousel>
           </div>
         </div>
