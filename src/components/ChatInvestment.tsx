@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Carousel, CarouselContent, CarouselItem} from '@/components/ui/carousel';
 import Image from 'next/image';
+import { UserCircle,Settings } from 'lucide-react';
 
 interface ChatMessage {
   id: number;
@@ -85,7 +86,6 @@ const ChatInvestment = () => {
         <div className="p-6 border-b border-gray-800">
           <div className="flex items-center space-x-3">
               <Image src={'2.svg'} alt={'fgffg'} width={30} height={30} />
-            <h1 className="text-xl font-bold" style={{ color: '#ddf1a5' }}>Fein-AI</h1>
           </div>
         </div>
 
@@ -117,6 +117,14 @@ const ChatInvestment = () => {
         <div className="flex-1 p-4">
           <ScrollArea className="h-full">
             <div className="space-y-4">
+              <div className='w-full h-10'>
+                <h1 className="text-xl font-bold" style={{ color: '#ddf1a5' }}>Fein-AI</h1>
+                <div className='flex mt-[-25px] items-center gap-2 justify-end'>
+                  <h3 >Dashboard</h3>
+                  <Settings className="w-5 h-5 inline-block mr-2" />
+                  <UserCircle className="w-5 h-5 inline-block" />
+                </div>
+              </div>
               {messages.map((message) => (
                 <div
                   key={message.id}
